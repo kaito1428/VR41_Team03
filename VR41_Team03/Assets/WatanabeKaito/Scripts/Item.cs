@@ -7,6 +7,8 @@ public class Item : MonoBehaviour
 
     private bool m_isScannedFlag = false;  // レジにスキャンしたかどうかのフラグ
 
+    private bool m_basketInFlag = false; // バスケットに入っているかどうかのフラグ
+
     public int GetPrice()
     {
         return m_price;
@@ -20,5 +22,15 @@ public class Item : MonoBehaviour
     public bool IsScanned()
     {
         return m_isScannedFlag;
+    }
+
+    public void SetBasketIn(bool isInBasket)
+    {
+        m_basketInFlag = isInBasket;
+    }
+
+    public bool IsBasketIn()
+    {
+        return m_basketInFlag;
     }
 }
