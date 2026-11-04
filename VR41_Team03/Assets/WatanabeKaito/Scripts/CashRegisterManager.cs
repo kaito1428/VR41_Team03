@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class CashRegisterManager : MonoBehaviour
 {
-    [Header("çáåvã‡äzUI")]
-    [SerializeField] private TotalAmountTextUI m_totalAmountTextUI;
+    [Header("âÔåvã‡äzUI")]
+    [SerializeField] private TransactionTotalUI m_transactionTotalUI;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,7 +28,7 @@ public class CashRegisterManager : MonoBehaviour
                 {
                     int price = item.GetPrice();
 
-                    m_totalAmountTextUI.UpdateTotalAmount(price);
+                    m_transactionTotalUI.UpdateTransactionTotal(price);
 
                     item.SetScanned(true);
                 }
