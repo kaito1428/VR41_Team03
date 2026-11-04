@@ -20,7 +20,7 @@ public class BasketManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Item"))
+        if (other.CompareTag("ITEM"))
         {
             basketItems.Add(other.gameObject); // アイテムをバスケットに追加
         }
