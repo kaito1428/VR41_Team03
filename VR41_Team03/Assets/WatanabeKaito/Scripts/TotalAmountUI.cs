@@ -1,9 +1,12 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class TotalAmountUI : MonoBehaviour
 {
-    [Header("‡Œv‹àŠzUI")]
+    [Header("åˆè¨ˆé‡‘é¡UI")]
     [SerializeField] private TMPro.TextMeshProUGUI m_totalAmountText;
+
+    [Header("ç›®æ¨™é‡‘é¡")]
+    [SerializeField ] private int m_targetAmount = 10000; // ç›®æ¨™é‡‘é¡ã‚’è¨­å®š
 
     private int m_totalAmount;
 
@@ -12,14 +15,14 @@ public class TotalAmountUI : MonoBehaviour
     {
         m_totalAmount = 0;
 
-        // ‰Šú•\¦
-        m_totalAmountText.text = m_totalAmount.ToString();
+        // åˆæœŸè¡¨ç¤º
+        m_totalAmountText.text = "Â¥" + m_totalAmount.ToString() + "/Â¥" + m_targetAmount.ToString();
     }
 
-    // ‡Œv‹àŠz‚ğXV‚·‚éƒƒ\ƒbƒh
+    // åˆè¨ˆé‡‘é¡ã‚’æ›´æ–°ã™ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰
     public void UpdateTotalAmount(int amount)
     {
         m_totalAmount += amount;
-        m_totalAmountText.text = m_totalAmount.ToString();
+        m_totalAmountText.text = "Â¥" +  m_totalAmount.ToString() + "/Â¥" + m_targetAmount.ToString();
     }
 }
