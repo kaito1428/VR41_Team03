@@ -8,6 +8,9 @@ public class BasketManager : MonoBehaviour
     [Header("会計金額UI")]
     [SerializeField] private TransactionTotalUI m_transactionTotalUI;
 
+    [Header("合計金額UI")]
+    [SerializeField] private TotalAmountUI m_totalAmountUI;
+
     [SerializeField] private QueueManager m_QueueManager;
 
     private List <GameObject> basketItems = new List<GameObject>(); // バスケット内のアイテムを格納するリスト
@@ -52,6 +55,8 @@ public class BasketManager : MonoBehaviour
             Destroy(item); // アイテムを削除
         }
         basketItems.Clear(); // リストをクリア
+
+        m_totalAmountUI.UpdateTotalAmount(m_transactionTotalUI.GetTransactionTotal()); // 会計金額を合計金額に加算
 
         m_transactionTotalUI.ResetTransactionTotal(); // 会計金額UIをリセット
 
