@@ -24,5 +24,7 @@ public class TotalAmountUI : MonoBehaviour
     {
         m_totalAmount += amount;
         m_totalAmountText.text = "¥" +  m_totalAmount.ToString() + "/¥" + m_targetAmount.ToString();
+
+        ScoreManager.Instance.AddSales(amount);
     }
 }

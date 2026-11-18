@@ -21,6 +21,8 @@ public class TitleManager : MonoBehaviour
     public void SceneChangeGame()
     {
         SceneController.Instance.ChangeScene(SceneController.SCENE_TYPE.GAME, SceneTransition.TRANSITION_TYPE.FADE);
+
+        ScoreManager.Instance.StartGame();
     }
 
     public void ExitGame()

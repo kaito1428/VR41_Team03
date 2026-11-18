@@ -10,6 +10,9 @@ public class CountdownTimer : MonoBehaviour
     [Header("時間表示")]
     [SerializeField] private TMP_Text m_timerText;
 
+    [Header("ゲームマネージャー")]
+    [SerializeField] private GameManager m_gameManager;
+
     // 残り時間（秒）
     private float m_remainingTime;
 
@@ -40,6 +43,9 @@ public class CountdownTimer : MonoBehaviour
         if (m_remainingTime <= 0f)
         {
             m_remainingTime = 0f;
+
+            m_gameManager.SceneChangeResult();
+
             m_isRunning = false;
         }
 
