@@ -1,18 +1,12 @@
-
+ï»¿
 using UnityEngine;
 using TMPro;
 
 public class ResultUI : MonoBehaviour
 {
-    [Header("ƒŠƒUƒ‹ƒg•\¦")]
+    [Header("ãƒªã‚¶ãƒ«ãƒˆè¡¨ç¤º")]
     [SerializeField]
     private TMP_Text m_salesText;
-
-    [SerializeField]
-    private TMP_Text m_targetText;
-
-    [SerializeField]
-    private TMP_Text m_rateText;
 
     [SerializeField]
     private TMP_Text m_rankText;
@@ -22,27 +16,21 @@ public class ResultUI : MonoBehaviour
         UpdateResult();
     }
 
-    // ƒŠƒUƒ‹ƒg‰æ–Ê‚Ì•\¦‚ğXV‚·‚é
+    // ãƒªã‚¶ãƒ«ãƒˆç”»é¢ã®è¡¨ç¤ºã‚’æ›´æ–°ã™ã‚‹
     public void UpdateResult()
     {
         ScoreManager scoreManager = ScoreManager.Instance;
 
         if (scoreManager == null)
         {
-            Debug.LogError("ScoreManager‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñB");
+            Debug.LogError("ScoreManagerãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã€‚");
             return;
         }
 
-        // ”„ã‹àŠz
-        m_salesText.text = "”„ã‹àŠzF" + scoreManager.TotalSales.ToString("N0") + "‰~";
+        // å£²ä¸Šé‡‘é¡/ç›®æ¨™é‡‘é¡
+        m_salesText.text = "Â¥" + scoreManager.TotalSales.ToString("N0") + "/Â¥" + scoreManager.TargetAmount.ToString("N0");
 
-        // –Ú•W‹àŠz
-        m_targetText.text = "–Ú•W‹àŠzF" + scoreManager.TargetAmount.ToString("N0") + "‰~";
-
-        // ’B¬Š„‡
-        m_rateText.text = "’B¬Š„‡F" + scoreManager.GetAchievementRate().ToString("F1") + "%";
-
-        // ƒ‰ƒ“ƒN
-        m_rankText.text = "ƒ‰ƒ“ƒNF" + scoreManager.GetRank();
+        // ãƒ©ãƒ³ã‚¯
+        m_rankText.text = "RANK : " + scoreManager.GetRank();
     }
 }
