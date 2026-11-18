@@ -7,17 +7,24 @@ public class BasketManager : MonoBehaviour
 {
     [Header("会計金額UI")]
     [SerializeField] private TransactionTotalUI m_transactionTotalUI;
-
     [SerializeField] private QueueManager m_QueueManager;
 
     private List <GameObject> basketItems = new List<GameObject>(); // バスケット内のアイテムを格納するリスト
 
+    private CustomerAI m_CurrentCustomer;
+
     private void Update()
     {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        // 現在の先頭客を取得
+        CustomerAI customer = m_QueueManager != null ? m_QueueManager.FrontCustomer : null;
+
+        // 客が変わった場合
+        if (customer != m_CurrentCustomer)
         {
-            ClearBasket();
+            m_CurrentCustomer = customer;
         }
+
+        AutoCompleteCheckout();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -30,9 +37,11 @@ public class BasketManager : MonoBehaviour
                 item.SetBasketIn(true); // アイテムがバスケットに入ったことを設定
 
                 // 商品がスキャン済みかどうかを確認し、スキャン済みの場合のみバスケットに追加
-                if (item.IsScanned())
+                if (item.IsScanned() && !basketItems.Contains(other.gameObject))
                 {
                     basketItems.Add(other.gameObject); // アイテムをバスケットに追加
+
+                    Debug.Log($"商品がかごに入りました：{other.gameObject.name}");
                 }
             }
         }
@@ -47,19 +56,36 @@ public class BasketManager : MonoBehaviour
     // バスケット内のアイテムを全て削除するメソッド
     public void ClearBasket()
     {
-        foreach (GameObject item in basketItems)
-        {
-            Destroy(item); // アイテムを削除
-        }
+        //foreach (GameObject item in basketItems)
+        //{
+        //    Destroy(item); // アイテムを削除
+        //}
         basketItems.Clear(); // リストをクリア
 
         m_transactionTotalUI.ResetTransactionTotal(); // 会計金額UIをリセット
 
-        CustomerAI customer = m_QueueManager.FrontCustomer;
+        //m_CurrentCustomer.CompleteCheckout(); // 会計完了
+    }
 
-        if (customer != null)
-        {
-            customer.CompleteCheckout(); // 会計を完了
-        }
+    // 自動会計判定
+    private void AutoCompleteCheckout()
+    {
+        if (m_CurrentCustomer == null)
+            return;
+
+        int expectedCount = m_CurrentCustomer.ExpectedProductCount;
+
+        if (expectedCount <= 0)
+            return;
+
+        GetBasketItems();
+
+        if (basketItems.Count != expectedCount)
+            return;
+
+        ClearBasket();
+
+        // 会計完了通知
+        m_CurrentCustomer.OnAllProductsCollected();
     }
 }
