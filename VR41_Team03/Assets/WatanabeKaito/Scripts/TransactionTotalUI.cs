@@ -15,7 +15,7 @@ public class TransactionTotalUI : MonoBehaviour
     public void UpdateTransactionTotal(int amount)
     {
         m_transactionTotal += amount;
-        m_transactionTotalText.text = "¥" + m_transactionTotal.ToString();
+        m_transactionTotalText.text = "¥" + m_transactionTotal.ToString("N0");
     }
 
     public void ResetTransactionTotal()
