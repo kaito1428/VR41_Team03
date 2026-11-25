@@ -13,11 +13,18 @@ public class TroublesomeCustomerAI : MonoBehaviour
     }
 
     [Header("移動設定")]
-    [SerializeField] private float m_StayDuration = 30f;
-    [SerializeField] private float m_MoveInterval = 3f;
-    [SerializeField] private float m_SampleDistance = 2f;
-    [SerializeField] private int m_MaxSampleAttempts = 10;
 
+    [Tooltip("店内に滞在する時間（秒）")]
+    [SerializeField] private float m_StayDuration = 30f;
+
+    [Tooltip("目的地に到着してから次の目的地へ移動するまでの待機時間（秒）")]
+    [SerializeField] private float m_MoveInterval = 3f;
+
+    [Tooltip("NavMesh上の移動可能地点を検索するときの検索半径")]
+    [SerializeField] private float m_SampleDistance = 2f;
+
+    [Tooltip("店内のランダムな移動先を探す最大試行回数")]
+    [SerializeField] private int m_MaxSampleAttempts = 10;
     private NavMeshAgent m_Agent;
 
     // Spawnerから受け取るシーン固有の参照
