@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/WatanabeKaito/Scenes/Watanabe_Title.unity
     guid: 8440c4da3eeb4a048b3d3977a11ba372
   - enabled: 1
+    path: Assets/WatanabeKaito/Scenes/TestScene.unity
+    guid: fdac85afdb3ff9c4f86c296086ecf6d4
+  - enabled: 1
     path: Assets/WatanabeKaito/Scenes/Watanabe_TestPlay.unity
     guid: 8c7cd8cec2fa46c42a00f97d52b57228
   - enabled: 1
