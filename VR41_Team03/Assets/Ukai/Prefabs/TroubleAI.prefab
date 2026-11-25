@@ -150,9 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49be31747efe84b44807808bccc88001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TroublesomeCustomerAI
-  m_WalkArea: {fileID: 0}
-  m_EntrancePoint: {fileID: 0}
-  m_ExitPoint: {fileID: 0}
-  m_StayDuration: 20
-  m_MoveInterval: 5
+  m_StayDuration: 30
+  m_MoveInterval: 10
   m_SampleDistance: 2
+  m_MaxSampleAttempts: 10

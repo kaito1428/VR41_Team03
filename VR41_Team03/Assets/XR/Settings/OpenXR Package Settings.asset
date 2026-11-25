@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feeef8d85de8db242bdda70cc7ff5acd, type: 3}
   m_Name: OculusTouchControllerProfile Android
   m_EditorClassIdentifier: Unity.XR.OpenXR::UnityEngine.XR.OpenXR.Features.Interactions.OculusTouchControllerProfile
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Oculus Touch Controller Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.oculustouch
@@ -138,18 +138,8 @@ MonoBehaviour:
   features:
   - {fileID: 6966216163889188127}
   - {fileID: 7903294144581294702}
-  - {fileID: -3255574132226200923}
-  - {fileID: 6592167715334494982}
   - {fileID: -3273763388236345960}
-  - {fileID: 5841144563024693247}
-  - {fileID: -2673150498261245978}
-  - {fileID: -8974639440742556259}
   - {fileID: -1513158906478215299}
-  - {fileID: 5504685515471952939}
-  - {fileID: 5742103841978095381}
-  - {fileID: -7558626899474460626}
-  - {fileID: -1135545325482652683}
-  - {fileID: 8118861046541868443}
   - {fileID: -3658927542872552612}
   - {fileID: 3921285835931116754}
   - {fileID: -9053377768072755667}
@@ -663,7 +653,7 @@ MonoBehaviour:
   nameUi: 'Android XR: AR Anchor'
   version: 0.1.0
   featureIdInternal: com.unity.openxr.feature.arfoundation-androidxr-anchor
-  openxrExtensionStrings: XR_ANDROID_trackables
+  openxrExtensionStrings: XR_ANDROID_trackables XR_ANDROID_device_anchor_persistence
   company: Unity Technologies
   priority: 0
   targetOpenXRApiVersion: 
@@ -679,7 +669,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12d3bf61b014a48a2b7564c61da9d7ad, type: 3}
-  m_Name: AndroidXRPerformanceMetrics Standalone
+  m_Name: AndroidXRPerformanceMetrics Android
   m_EditorClassIdentifier: Unity.XR.AndroidOpenXR::UnityEngine.XR.OpenXR.Features.Android.AndroidXRPerformanceMetrics
   m_enabled: 0
   nameUi: Android XR Performance Metrics
@@ -1164,8 +1154,8 @@ MonoBehaviour:
   features:
   - {fileID: 6057595631893920809}
   - {fileID: 8307915229089683583}
-  - {fileID: -5761089520625583544}
-  - {fileID: 1362571625139388772}
+  - {fileID: -3255574132226200923}
+  - {fileID: 6592167715334494982}
   - {fileID: 5378096630947227115}
   - {fileID: -6905505187883638776}
   - {fileID: 3347411297395777950}
@@ -1176,7 +1166,7 @@ MonoBehaviour:
   - {fileID: -55895761542101743}
   - {fileID: -7367845533858261335}
   - {fileID: -3596284517029319793}
-  - {fileID: -4449609949758291809}
+  - {fileID: 8118861046541868443}
   - {fileID: 1754245047564411822}
   - {fileID: 7502772729246732836}
   - {fileID: -3360269405741072798}
@@ -1825,7 +1815,7 @@ MonoBehaviour:
   nameUi: 'Android XR: AR Anchor'
   version: 0.1.0
   featureIdInternal: com.unity.openxr.feature.arfoundation-androidxr-anchor
-  openxrExtensionStrings: XR_ANDROID_trackables
+  openxrExtensionStrings: XR_ANDROID_trackables XR_ANDROID_device_anchor_persistence
   company: Unity Technologies
   priority: 0
   targetOpenXRApiVersion: 
@@ -2044,7 +2034,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90ae1e8c3c7a542bba339faf2e771c5a, type: 3}
-  m_Name: AndroidXRSupportFeature Standalone
+  m_Name: AndroidXRSupportFeature Android
   m_EditorClassIdentifier: Unity.XR.AndroidOpenXR::UnityEngine.XR.OpenXR.Features.Android.AndroidXRSupportFeature
   m_enabled: 0
   nameUi: Android XR Support
@@ -2277,7 +2267,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c36843bac48b29469f79baf3c98f9b6, type: 3}
-  m_Name: AndroidXRHandMeshData Standalone
+  m_Name: AndroidXRHandMeshData Android
   m_EditorClassIdentifier: Unity.XR.AndroidOpenXR::UnityEngine.XR.OpenXR.Features.Android.AndroidXRHandMeshData
   m_enabled: 0
   nameUi: 'Android XR: Hand Mesh Data'
