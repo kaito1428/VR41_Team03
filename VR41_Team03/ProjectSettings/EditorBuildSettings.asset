@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Title.unity
     guid: 0b3544594f7d3724ca56822d0ff50074
   - enabled: 1
@@ -14,16 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/WatanabeKaito/Scenes/TestScene.unity
     guid: fdac85afdb3ff9c4f86c296086ecf6d4
-  - enabled: 1
+  - enabled: 0
     path: Assets/WatanabeKaito/Scenes/Watanabe_TestPlay.unity
     guid: 8c7cd8cec2fa46c42a00f97d52b57228
   - enabled: 1
     path: Assets/WatanabeKaito/Scenes/Watanabe_Result.unity
     guid: 61a5086d4fd06cd45a08bf7bbed3bc05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/game.unity
     guid: f068cefd5a61e4841bd495abd48ed387
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 55daccc09a3b69647bbab145b54a3ab3
   - enabled: 0

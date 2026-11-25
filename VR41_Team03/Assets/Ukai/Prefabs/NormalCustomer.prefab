@@ -150,8 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88a91876255568418965569fc7298ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustomerAI
-  m_ProductSpacing: 0.2
+  m_ProductSpacing: 0.05
   m_ProductColumns: 3
-  m_ProductRandomOffset: 0.05
+  m_ProductRandomOffset: 0.005
   m_MoneyPrefab: {fileID: 4072453391718583348, guid: 4c4e3585c8f51fe4da107d0995e76aa3, type: 3}
-  m_MoneySpawnPoint: {fileID: 0}
